@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BFDS Archive Search</title>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+</head>
+<body>
+  <h1>BFDS FidoNet Archive Search</h1>
+  <input type="text" id="search" placeholder="Search descriptions..." style="width:400px; padding:8px;">
+  <div id="results"></div>
+
+  <script>
+    fetch('bfds_index.json')
+      .then(res => res.json())
+      .then(data => {
+        const fuse = new Fuse(data, {
+          keys: ['diz_content', 'archive'],
+          threshold: 0.3, includeScore: true
+        });
+        document.getElementById('search').addEventListener('input', e => {
+          const query = e.target.value.trim();
+          const results = query ? fuse.search(query) : [];
+          let html = '';
+          results.forEach(r => {
+            const item = r.item;
+            html += `<p><strong>${item.archive}</strong><br>${item.diz_content.replace(/\n/g, '<br>')}<br><a href="${item.full_path.replace(/D:\\Files\\Dizzed\\BFDS\\/g, '/files/')}">Download</a></p><hr>`;
+          });
+          document.getElementById('results').innerHTML = html || '<p>No matches.</p>';
+        });
+      });
+  </script>
+</body>
+</html>
