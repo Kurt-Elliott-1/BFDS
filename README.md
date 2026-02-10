@@ -7,6 +7,9 @@ My contributions (index.html, files.bbs, bfds_index.json, organization, scripts)
 Feel free to download, mirror, modify, or contribute!
 If any original author objects to inclusion, contact me (@KurtElliott8) and I'll remove it.
 
+Ben Rtchey Jr. passed away, I was windering why his site went down!
+https://www.fountainmemorialfuneralhome.com/obituary/benjamin-dan-ritchey?lud=9+53BD8CCE1CAFA96A359635BF328BA44
+
 Grok AI recomended placing the files here, I added a File_id.diz to all the files that needed them, I HUGE thank you to Ben Richey
 for building the old BFDS site and all the folks that created these uploads for all of us, I had a hard time deciding what to do
 with all these files, I wish I could tun them without anything like DosBox...
